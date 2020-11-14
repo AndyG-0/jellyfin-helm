@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jellyfin-pv
+  labels:
+    nfs: jellyfin
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: slow
+  mountOptions:
+    - nfsvers=4.1
+  nfs:
+    path: /media/mybook/media/
+    server: 192.168.1.142
