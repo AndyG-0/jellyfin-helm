@@ -13,7 +13,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: slow
   mountOptions:
-    - nfsvers=4.1
+    - nfsvers=3
   nfs:
     path: /media/mybook/media/
     server: 192.168.1.142
